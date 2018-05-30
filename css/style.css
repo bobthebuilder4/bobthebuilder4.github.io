@@ -1,0 +1,24 @@
+body{
+	font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+	font-size: 150%;
+	color: #fff;
+	background-color: #3498db;
+}
+
+.container{
+	min-width: 300px;
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+.article{
+	border: 5px solid #34495e;
+	margin: 20px 0;
+	padding: 20px;
+}
+
+h1{
+	color: #2c3e50;
+	margin: 10px 0;
+}
+
