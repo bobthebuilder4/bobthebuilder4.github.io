@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>20 MySQL (Mysqladmin) Commands for Database Administration in Linux | Hamid SOLTANI</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="Linux,CentOS,RHEL,Fedora,DataBases,MySQL" />
+    
+    <meta name="description" content="source: https://www.tecmint.com/mysqladmin-commands-for-database-administration-in-linux/ some very useful “mysqladmin” commands that are used by system/database administrators in their day-to-day wor">
+<meta name="keywords" content="Linux,CentOS,RHEL,Fedora,DataBases,MySQL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="20 MySQL (Mysqladmin) Commands for Database Administration in Linux">
+<meta property="og:url" content="http://localhost:4000/2018/05/28/db-20-mysql-mysqladmin-commands-for-database-administration-in-linux/index.html">
+<meta property="og:site_name" content="Hamid SOLTANI">
+<meta property="og:description" content="source: https://www.tecmint.com/mysqladmin-commands-for-database-administration-in-linux/ some very useful “mysqladmin” commands that are used by system/database administrators in their day-to-day wor">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://localhost:4000/css/images/thumbs/mysql.png">
+<meta property="og:updated_time" content="2018-05-29T12:15:58.860Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="20 MySQL (Mysqladmin) Commands for Database Administration in Linux">
+<meta name="twitter:description" content="source: https://www.tecmint.com/mysqladmin-commands-for-database-administration-in-linux/ some very useful “mysqladmin” commands that are used by system/database administrators in their day-to-day wor">
+<meta name="twitter:image" content="http://localhost:4000/css/images/thumbs/mysql.png">
+    
+
+    
+        <link rel="alternate" href="/" title="Hamid SOLTANI" type="application/atom+xml" />
+    
+
+    
+        <link rel="icon" href="/css/images/favicon.png" />
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.2.4/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">IT &amp; Network Engineer</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <!-- <a class="main-nav-list-link" href="/">Home</a> -->
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <!-- <a class="main-nav-list-link" href="/About/index.html">About</a> -->
+                                    <a class="main-nav-list-link" href="/About/index.html">About</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Cheat-Sheets/">Cheat-Sheets</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Cheat-Sheets/DataBases/">DataBases</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Tutorials/">Tutorials</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Tutorials/DataBases/">DataBases</a></li></ul></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Tutorials/">Tutorials</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Tutorials/DataBases/">DataBases</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-db-20-mysql-mysqladmin-commands-for-database-administration-in-linux" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        20 MySQL (Mysqladmin) Commands for Database Administration in Linux
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2018/05/28/db-20-mysql-mysqladmin-commands-for-database-administration-in-linux/" class="article-date">
+            <time datetime="2018-05-28T13:17:44.000Z" itemprop="datePublished">2018-05-28</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/CentOS/">CentOS</a>, <a class="tag-link" href="/tags/DataBases/">DataBases</a>, <a class="tag-link" href="/tags/Fedora/">Fedora</a>, <a class="tag-link" href="/tags/Linux/">Linux</a>, <a class="tag-link" href="/tags/MySQL/">MySQL</a>, <a class="tag-link" href="/tags/RHEL/">RHEL</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p>source: <a href="https://www.tecmint.com/mysqladmin-commands-for-database-administration-in-linux/" target="_blank" rel="noopener">https://www.tecmint.com/mysqladmin-commands-for-database-administration-in-linux/</a></p>
+<p>some very useful “mysqladmin” commands that are used by system/database administrators in their day-to-day work</p>
+<h2 id="mysqladmin"><a href="#mysqladmin" class="headerlink" title="mysqladmin"></a>mysqladmin</h2><p>It is a command-line utility the comes with MySQL server<br>used by DBA to perform some basic MySQL tasks easily such as:</p>
+<ul>
+<li>setting root password</li>
+<li>changing root password</li>
+<li>monitoring mysql processes</li>
+<li>reloading privileges</li>
+<li>checking server status etc.</li>
+</ul>
+<h3 id="set-MySQL-Root-password"><a href="#set-MySQL-Root-password" class="headerlink" title="set MySQL Root password"></a>set MySQL Root password</h3><p>If you have fresh installation of MySQL server,<br>then it doesn’t required any password to connect it as root user.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqladmin -u root password YOURNEWPASSWORD</span><br></pre></td></tr></table></figure>
+<h3 id="Change-MySQL-Root-password"><a href="#Change-MySQL-Root-password" class="headerlink" title="Change MySQL Root password"></a>Change MySQL Root password</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysqladmin -u root -p123456 password <span class="string">'xyz123'</span></span><br><span class="line"><span class="comment"># old password: 123456, new password: xyz123</span></span><br></pre></td></tr></table></figure>
+<h3 id="check-MySQL-Server-is-running"><a href="#check-MySQL-Server-is-running" class="headerlink" title="check MySQL Server is running"></a>check MySQL Server is running</h3><p>To find out whether MySQL server is up and running<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysqladmin -u root -p ping</span><br><span class="line"><span class="comment"># --&gt; mysqld is alive</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="Check-which-MySQL-version-I-am-running"><a href="#Check-which-MySQL-version-I-am-running" class="headerlink" title="Check which MySQL version I am running"></a>Check which MySQL version I am running</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysqladmin -u root -p version</span><br><span class="line"><span class="comment"># shows MySQL version along with the current running status</span></span><br></pre></td></tr></table></figure>
+<h3 id="Find-out-current-Status-of-MySQL-server"><a href="#Find-out-current-Status-of-MySQL-server" class="headerlink" title="Find out current Status of MySQL server"></a>Find out current Status of MySQL server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysqladmin -u root -ptmppassword status</span><br><span class="line"><span class="comment"># shows the status of uptime with running threads and queries</span></span><br></pre></td></tr></table></figure>
+<h3 id="check-status-of-all-MySQL-Server-Variable’s-and-value’s"><a href="#check-status-of-all-MySQL-Server-Variable’s-and-value’s" class="headerlink" title="check status of all MySQL Server Variable’s and value’s"></a>check status of all MySQL Server Variable’s and value’s</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysqladmin -u root -p extended-status</span><br><span class="line"><span class="comment"># check all the running status of MySQL server variables and values</span></span><br></pre></td></tr></table></figure>
+<h3 id="see-all-MySQL-server-Variables-and-Values"><a href="#see-all-MySQL-server-Variables-and-Values" class="headerlink" title="see all MySQL server Variables and Values"></a>see all MySQL server Variables and Values</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysqladmin  -u root -p variables</span><br><span class="line"><span class="comment"># To see all the running variables and values of MySQL server</span></span><br></pre></td></tr></table></figure>
+<h3 id="check-all-the-running-Process-of-MySQL-server"><a href="#check-all-the-running-Process-of-MySQL-server" class="headerlink" title="check all the running Process of MySQL server"></a>check all the running Process of MySQL server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysqladmin -u root -p processlist</span><br><span class="line"><span class="comment"># display all the running process of MySQL database queries</span></span><br></pre></td></tr></table></figure>
+<h3 id="create-a-Database-in-MySQL-server"><a href="#create-a-Database-in-MySQL-server" class="headerlink" title="create a Database in MySQL server"></a>create a Database in MySQL server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mysqladmin -u root -p create databasename</span><br><span class="line"><span class="comment"># To create a new database</span></span><br><span class="line"></span><br><span class="line">mysql -u root -p <span class="comment"># connect</span></span><br><span class="line">mysql&gt; show databases; <span class="comment"># Verify</span></span><br></pre></td></tr></table></figure>
+<h3 id="drop-a-Database"><a href="#drop-a-Database" class="headerlink" title="drop a Database"></a>drop a Database</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mysqladmin -u root -p drop databasename</span><br><span class="line">...</span><br><span class="line"><span class="comment"># You will be asked to confirm press ‘y‘</span></span><br><span class="line">Do you really want to drop the <span class="string">'databasename'</span> database [y/N] y</span><br></pre></td></tr></table></figure>
+<h3 id="reload-refresh-MySQL-Privileges"><a href="#reload-refresh-MySQL-Privileges" class="headerlink" title="reload/refresh MySQL Privileges"></a>reload/refresh MySQL Privileges</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mysqladmin -u root -p reload;</span><br><span class="line"><span class="comment"># tells the server to reload the grant tables</span></span><br><span class="line"></span><br><span class="line">mysqladmin -u root -p refresh</span><br><span class="line"><span class="comment"># flushes all tables and reopens the log files.</span></span><br></pre></td></tr></table></figure>
+<h3 id="shutdown-MySQL-server-Safely"><a href="#shutdown-MySQL-server-Safely" class="headerlink" title="shutdown MySQL server Safely"></a>shutdown MySQL server Safely</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mysqladmin -u root -p shutdown</span><br><span class="line"></span><br><span class="line"><span class="comment"># to start/stop MySQL server</span></span><br><span class="line">/etc/init.d/mysqld stop</span><br><span class="line">/etc/init.d/mysqld start</span><br></pre></td></tr></table></figure>
+<h3 id="Some-useful-MySQL-Flush-commands"><a href="#Some-useful-MySQL-Flush-commands" class="headerlink" title="Some useful MySQL Flush commands"></a>Some useful MySQL Flush commands</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">mysqladmin -u root -p flush-hosts</span><br><span class="line"><span class="comment"># Flush all host information from host cache</span></span><br><span class="line"></span><br><span class="line">mysqladmin -u root -p flush-tables</span><br><span class="line"><span class="comment"># Flush all tables</span></span><br><span class="line"></span><br><span class="line">mysqladmin -u root -p flush-threads</span><br><span class="line"><span class="comment"># Flush all threads cache</span></span><br><span class="line"></span><br><span class="line">mysqladmin -u root -p flush-logs</span><br><span class="line"><span class="comment"># Flush all information logs</span></span><br><span class="line"></span><br><span class="line">mysqladmin -u root -p flush-privileges</span><br><span class="line"><span class="comment"># Reload the grant tables (same as reload)</span></span><br><span class="line"></span><br><span class="line">mysqladmin -u root -p flush-status</span><br><span class="line"><span class="comment"># Clear status variables</span></span><br></pre></td></tr></table></figure>
+<h3 id="kill-Sleeping-MySQL-Client-Process"><a href="#kill-Sleeping-MySQL-Client-Process" class="headerlink" title="kill Sleeping MySQL Client Process"></a>kill Sleeping MySQL Client Process</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mysqladmin -u root -p processlist</span><br><span class="line"><span class="comment"># to identify sleeping MySQL client process</span></span><br><span class="line"></span><br><span class="line">mysqladmin -u root -p <span class="built_in">kill</span> 5</span><br><span class="line"><span class="comment"># where 5 is the process ID</span></span><br><span class="line"></span><br><span class="line">mysqladmin -u root -p <span class="built_in">kill</span> 5,10</span><br><span class="line"><span class="comment"># to kill multiple process (comma separated)</span></span><br></pre></td></tr></table></figure>
+<h3 id="run-multiple-mysqladmin-commands-together"><a href="#run-multiple-mysqladmin-commands-together" class="headerlink" title="run multiple mysqladmin commands together"></a>run multiple mysqladmin commands together</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqladmin  -u root -p processlist status version</span><br></pre></td></tr></table></figure>
+<h3 id="Connect-remote-mysql-server-h-for-host"><a href="#Connect-remote-mysql-server-h-for-host" class="headerlink" title="Connect remote mysql server (-h for host)"></a>Connect remote mysql server (-h for host)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqladmin  -h 172.16.25.126 -u root -p</span><br></pre></td></tr></table></figure>
+<h3 id="execute-command-on-remote-MySQL-server"><a href="#execute-command-on-remote-MySQL-server" class="headerlink" title="execute command on remote MySQL server"></a>execute command on remote MySQL server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqladmin  -h 172.16.25.126 -u root -p status</span><br></pre></td></tr></table></figure>
+<h3 id="start-stop-MySQL-replication-on-a-slave-server"><a href="#start-stop-MySQL-replication-on-a-slave-server" class="headerlink" title="start/stop MySQL replication on a slave server"></a>start/stop MySQL replication on a slave server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysqladmin  -u root -p start-slave</span><br><span class="line">mysqladmin  -u root -p stop-slave</span><br></pre></td></tr></table></figure>
+<h3 id="store-MySQL-server-Debug-Information-to-logs"><a href="#store-MySQL-server-Debug-Information-to-logs" class="headerlink" title="store MySQL server Debug Information to logs"></a>store MySQL server Debug Information to logs</h3><p>It tells the server to write debug information about locks in use, used memory and query usage to the MySQL log file including information about event scheduler.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqladmin  -u root -p debug</span><br></pre></td></tr></table></figure>
+<h3 id="view-mysqladmin-options-and-usage"><a href="#view-mysqladmin-options-and-usage" class="headerlink" title="view mysqladmin options and usage"></a>view mysqladmin options and usage</h3><p>To find out more options and usage of myslqadmin</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mysqladmin --<span class="built_in">help</span></span><br><span class="line"><span class="comment"># display a list of available options</span></span><br></pre></td></tr></table></figure>
+<h3 id="Links"><a href="#Links" class="headerlink" title="Links"></a>Links</h3><ul>
+<li><a href="https://www.tecmint.com/install-mysql-on-rhel-centos-6-5-fedora-17-12/" target="_blank" rel="noopener">Installation of MySQL 5.5.28 Server on RHEL/CentOS/Fedora</a></li>
+<li><a href="https://www.tecmint.com/how-to-setup-mysql-master-slave-replication-in-rhel-centos-fedora/" target="_blank" rel="noopener">MySQL replication</a></li>
+</ul>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://localhost:4000/2018/05/28/db-20-mysql-mysqladmin-commands-for-database-administration-in-linux/" data-id="cjhrsmb5p00013ga7d7fmlsx8" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="linkedin" href="https://www.linkedin.com/in/hamid-soltani-dz" target="_blank" rel="noopener">
+                        <i class="icon fa fa-linkedin"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2018/05/28/cs-mysql-cheat-sheet/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            MySQL Cheat Sheet
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/05/29/test/" class="title">test</a></p>
+                            <p class="item-date"><time datetime="2018-05-29T14:42:53.000Z" itemprop="datePublished">2018-05-29</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Tutorials/">Tutorials</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tutorials/DataBases/">DataBases</a></p>
+                            <p class="item-title"><a href="/2018/05/28/db-4-Useful-Command-line-Tools-to-Monitor-MySQL-Performance-in-Linux/" class="title">4 Useful Command line Tools to Monitor MySQL Performance in Linux</a></p>
+                            <p class="item-date"><time datetime="2018-05-28T14:31:09.000Z" itemprop="datePublished">2018-05-28</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Tutorials/">Tutorials</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tutorials/DataBases/">DataBases</a></p>
+                            <p class="item-title"><a href="/2018/05/28/db-how-to-backup-databases-using-mysqldump-tool/" class="title">How To Backup Databases Using mysqldump Tool</a></p>
+                            <p class="item-date"><time datetime="2018-05-28T13:55:45.000Z" itemprop="datePublished">2018-05-28</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Cheat-Sheets/">Cheat-Sheets</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Cheat-Sheets/DataBases/">DataBases</a></p>
+                            <p class="item-title"><a href="/2018/05/28/cs-mysql-cheat-sheet/" class="title">MySQL Cheat Sheet</a></p>
+                            <p class="item-date"><time datetime="2018-05-28T13:39:44.000Z" itemprop="datePublished">2018-05-28</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Tutorials/">Tutorials</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tutorials/DataBases/">DataBases</a></p>
+                            <p class="item-title"><a href="/2018/05/28/db-20-mysql-mysqladmin-commands-for-database-administration-in-linux/" class="title">20 MySQL (Mysqladmin) Commands for Database Administration in Linux</a></p>
+                            <p class="item-date"><time datetime="2018-05-28T13:17:44.000Z" itemprop="datePublished">2018-05-28</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Cheat-Sheets/">Cheat-Sheets</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Cheat-Sheets/DataBases/">DataBases</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tutorials/">Tutorials</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tutorials/DataBases/">DataBases</a><span class="category-list-count">3</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Backup/" style="font-size: 10px;">Backup</a> <a href="/tags/CentOS/" style="font-size: 10px;">CentOS</a> <a href="/tags/Cheat-Sheets/" style="font-size: 10px;">Cheat-Sheets</a> <a href="/tags/DataBases/" style="font-size: 20px;">DataBases</a> <a href="/tags/Fedora/" style="font-size: 10px;">Fedora</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Monitoring/" style="font-size: 10px;">Monitoring</a> <a href="/tags/MySQL/" style="font-size: 20px;">MySQL</a> <a href="/tags/RHEL/" style="font-size: 10px;">RHEL</a> <a href="/tags/SQL/" style="font-size: 15px;">SQL</a> <a href="/tags/cli-Tools/" style="font-size: 10px;">cli Tools</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="https://opensource.com">opensource.com</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://www.linux.com/tutorials">linux.com</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://www.tecmint.com">tecmint.com</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://www.thegeekstuff.com">thegeekstuff.com</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2018 Hamid SOLTANI</p>
+                <!-- <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p> -->
+                <p>IT & Netwok Engineer</p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

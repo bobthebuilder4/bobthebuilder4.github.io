@@ -6,20 +6,26 @@
     
 
     
-    <title>Hamid SOLTANI</title>
+    <title>4 Useful Command line Tools to Monitor MySQL Performance in Linux | Hamid SOLTANI</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, omnis.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hamid SOLTANI">
-<meta property="og:url" content="http://localhost:4000/index.html">
+        <meta name="keywords" content="DataBases,MySQL,cli Tools,Monitoring" />
+    
+    <meta name="description" content="source: https://www.tecmint.com/mysql-performance-monitoring/ 4 command line tools to monitor MySQL database uptime, load and performance in Linux. Uptime: means how long the database has been running">
+<meta name="keywords" content="DataBases,MySQL,cli Tools,Monitoring">
+<meta property="og:type" content="article">
+<meta property="og:title" content="4 Useful Command line Tools to Monitor MySQL Performance in Linux">
+<meta property="og:url" content="http://localhost:4000/2018/05/28/db-4-Useful-Command-line-Tools-to-Monitor-MySQL-Performance-in-Linux/index.html">
 <meta property="og:site_name" content="Hamid SOLTANI">
-<meta property="og:description" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, omnis.">
+<meta property="og:description" content="source: https://www.tecmint.com/mysql-performance-monitoring/ 4 command line tools to monitor MySQL database uptime, load and performance in Linux. Uptime: means how long the database has been running">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="http://localhost:4000/img/mytop.jpeg">
+<meta property="og:updated_time" content="2018-05-28T14:37:53.580Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hamid SOLTANI">
-<meta name="twitter:description" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, omnis.">
+<meta name="twitter:title" content="4 Useful Command line Tools to Monitor MySQL Performance in Linux">
+<meta name="twitter:description" content="source: https://www.tecmint.com/mysql-performance-monitoring/ 4 command line tools to monitor MySQL database uptime, load and performance in Linux. Uptime: means how long the database has been running">
+<meta name="twitter:image" content="http://localhost:4000/img/mytop.jpeg">
     
 
     
@@ -136,297 +142,169 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <em class="page-title-link" data-url="home">Home</em>
+    <a class="page-title-link" href="/categories/Tutorials/">Tutorials</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Tutorials/DataBases/">DataBases</a>
     </h1>
 </div>
                         <div class="main-body-content">
-                            
+                            <article id="post-db-4-Useful-Command-line-Tools-to-Monitor-MySQL-Performance-in-Linux" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        4 Useful Command line Tools to Monitor MySQL Performance in Linux
+        </h1>
+    
 
-    
-    
+            </header>
         
         
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2018" class="archive-year"><i class="icon fa fa-calendar-o"></i>2018</a>
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2018/05/28/db-4-Useful-Command-line-Tools-to-Monitor-MySQL-Performance-in-Linux/" class="article-date">
+            <time datetime="2018-05-28T14:31:09.000Z" itemprop="datePublished">2018-05-28</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/DataBases/">DataBases</a>, <a class="tag-link" href="/tags/Monitoring/">Monitoring</a>, <a class="tag-link" href="/tags/MySQL/">MySQL</a>, <a class="tag-link" href="/tags/cli-Tools/">cli Tools</a>
+    </div>
+
             </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
         
-        <a href="/2018/05/29/test/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/img/t.jpeg)" alt="test" class="thumbnail-image"></span>
-    
-    
         
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-</span>
+        <div class="article-entry" itemprop="articleBody">
+            <p>source: <a href="https://www.tecmint.com/mysql-performance-monitoring/" target="_blank" rel="noopener">https://www.tecmint.com/mysql-performance-monitoring/</a></p>
+<p>4 command line tools to monitor MySQL database uptime, load and performance in Linux.</p>
+<p>Uptime: means how long the database has been running and up since its last shutdown or restart.</p>
+<ul>
+<li>it helps system administrators to check the status of MySQL database about<ul>
+<li>how many queries per second that MySQL database serves,</li>
+<li>threads,</li>
+<li>slow queries</li>
+<li>and lots of interesting statistics</li>
+</ul>
+</li>
+</ul>
+<h2 id="Mytop"><a href="#Mytop" class="headerlink" title="Mytop"></a>Mytop</h2><p><img src="/img/mytop.jpeg" alt=""></p>
+<ul>
+<li>is open source and free console-based (non-gui) monitoring tool</li>
+<li>displays statistics about threads, queries, slow queries, uptime, load, etc. (in tabular format)</li>
+<li>much similar to <code>top</code></li>
+<li>indirectly helps the administrators to optimize and improve performance of MySQl to handle large requests and decrease server load.</li>
+</ul>
+<p><a href="https://www.tecmint.com/mytop-mysql-database-monitoring-in-rhel-centos-fedora/" target="_blank" rel="noopener">How to Install Mytop (MySQL Monitoring) in Linux</a></p>
+<h2 id="mtop-MySQL-top"><a href="#mtop-MySQL-top" class="headerlink" title="mtop (MySQL top)"></a>mtop (MySQL top)</h2><p><img src="/img/mtop.jpeg" alt=""></p>
+<ul>
+<li>is a another similar open source, command line based real time MYSQL Server monitoring tool</li>
+<li>display results in <strong>tabular format</strong> much like <code>mytop</code></li>
+<li>monitors MySQL queries which are taking the most amount of time to finish and kills those long running queries after certain specified time</li>
+<li>enable us to identify performance related problems, configuration information, performance statistics and tuning related tips from the command line interface</li>
+<li>but <code>mtop</code> is not actively maintained and <strong>may not work on newly installed MySQL versions</strong></li>
+</ul>
+<p><a href="https://www.tecmint.com/install-mtop-mysql-database-server-monitoring-in-rhel-centos-6-5-4-fedora-17-12/" target="_blank" rel="noopener">How to Install Mtop (MySQL Monitoring) in Linux</a></p>
+<h2 id="Innotop"><a href="#Innotop" class="headerlink" title="Innotop"></a>Innotop</h2><p><img src="/img/innotop.jpeg" alt=""></p>
+<ul>
+<li>is a real time advanced command line based investigation program</li>
+<li>monitor local and remote MySQL servers running under <strong>InnoDB engine</strong></li>
+<li>includes many features and comes with different types of modes/options</li>
+<li>helps us to monitor various aspects of MySQL performance to find out what’s wrong going with MySQL server.</li>
+</ul>
+<p><a href="https://www.tecmint.com/install-innotop-to-monitor-mysql-server-performance/" target="_blank" rel="noopener">How to Install Innotop (MySQL Monitoring) in Linux</a></p>
+<h2 id="mysqladmin"><a href="#mysqladmin" class="headerlink" title="mysqladmin"></a>mysqladmin</h2><p>is a default command line MySQL client that comes pre-installed with MySQL package for performing administrative operations such as:</p>
+<ul>
+<li>monitoring processes</li>
+<li>checking server configuration</li>
+<li>reloading privileges</li>
+<li>current status</li>
+<li>setting root password</li>
+<li>changing root password</li>
+<li>create/drop databases</li>
+<li>and much more.</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqladmin -u root -p version <span class="comment"># check the mysql status as well as uptime</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>you must have root permission</p>
+</blockquote>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>If you’re looking for a good monitor tool for your own work, I recommend mytop and innotop. I used to depend on mytop for my daily monitoring purposes, but now I shifted to innotop, because it displays much more statistics and information, including important transactions.</p>
 
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
+        </div>
+        <footer class="article-footer">
             
-            </div>
-            <div class="date"><time datetime="2018-05-29T14:42:53.000Z" itemprop="datePublished">2018-05-29</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2018/05/29/test/">test</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
- ADD Accomplishements
- Books that I’ve read
- Training Videos That I’ve followed
- Add http://vizualize.me/
- AWS
- Thumbnails
- Quotes
 
 
 
+    <a data-url="http://localhost:4000/2018/05/28/db-4-Useful-Command-line-Tools-to-Monitor-MySQL-Performance-in-Linux/" data-id="cjhrsmb6d00043ga7cfxbs4ew" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
 
-command
-description
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
 
+            if ($('#' + id).length) {
+                box = $('#' + id);
 
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
 
+              box = $(html);
 
-adipisicing
-itaque
+              $('body').append(box);
+            }
 
+            $('.article-share-box.on').hide();
 
-amet
-Lorem
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
 
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
 
-aspern
-        </p>
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
     </div>
 </article>
-    
 
+    <section id="comments">
     
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2018/05/28/db-4-Useful-Command-line-Tools-to-Monitor-MySQL-Performance-in-Linux/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/img/mytop.jpeg)" alt="4 Useful Command line Tools to Monitor MySQL Performance in Linux" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Tutorials/">Tutorials</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tutorials/DataBases/">DataBases</a>
-            </div>
-            <div class="date"><time datetime="2018-05-28T14:31:09.000Z" itemprop="datePublished">2018-05-28</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2018/05/28/db-4-Useful-Command-line-Tools-to-Monitor-MySQL-Performance-in-Linux/">4 Useful Command line Tools to Monitor MySQL Performance in Linux</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            source: https://www.tecmint.com/mysql-performance-monitoring/
-4 command line tools to monitor MySQL database uptime, load and performance in Linux.
-Uptime: means how long the database has been running
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2018/05/28/db-how-to-backup-databases-using-mysqldump-tool/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/img/mysql-backup.jpg)" alt="How To Backup Databases Using mysqldump Tool" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Tutorials/">Tutorials</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tutorials/DataBases/">DataBases</a>
-            </div>
-            <div class="date"><time datetime="2018-05-28T13:55:45.000Z" itemprop="datePublished">2018-05-28</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2018/05/28/db-how-to-backup-databases-using-mysqldump-tool/">How To Backup Databases Using mysqldump Tool</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-source: http://www.mysqltutorial.org/how-to-backup-database-using-mysqldump.aspx
-
-MySQL GUI tools, often provide features for backup MySQL dbs with ease
-
-phpMyAdmin
-SQLyog
-
-
-Problem:the backup proces
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2018/05/28/cs-mysql-cheat-sheet/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/css/images/thumbs/mysql.png)" alt="MySQL Cheat Sheet" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Cheat-Sheets/">Cheat-Sheets</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Cheat-Sheets/DataBases/">DataBases</a>
-            </div>
-            <div class="date"><time datetime="2018-05-28T13:39:44.000Z" itemprop="datePublished">2018-05-28</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2018/05/28/cs-mysql-cheat-sheet/">MySQL Cheat Sheet</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            source: http://www.mysqltutorial.org/mysql-cheat-sheet.aspx
-
-the most commonly used MySQL commands and statements that help you work with MySQL more effectively.
-
-MySQL CommandsAccess MySQL server fro
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2018/05/28/db-20-mysql-mysqladmin-commands-for-database-administration-in-linux/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/css/images/thumbs/mysql.png)" alt="20 MySQL (Mysqladmin) Commands for Database Administration in Linux" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Tutorials/">Tutorials</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tutorials/DataBases/">DataBases</a>
-            </div>
-            <div class="date"><time datetime="2018-05-28T13:17:44.000Z" itemprop="datePublished">2018-05-28</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2018/05/28/db-20-mysql-mysqladmin-commands-for-database-administration-in-linux/">20 MySQL (Mysqladmin) Commands for Database Administration in Linux</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            source: https://www.tecmint.com/mysqladmin-commands-for-database-administration-in-linux/
-some very useful “mysqladmin” commands that are used by system/database administrators in their day-to-day wor
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-
-    </div></section>
-
+    </section>
 
 
                         </div>
@@ -463,6 +341,29 @@ some very useful “mysqladmin” commands that are used by system/database admi
             
         </ul>
     </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2018/05/29/test/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            test
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2018/05/28/db-how-to-backup-databases-using-mysqldump-tool/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">How To Backup Databases Using mysqldump Tool</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         

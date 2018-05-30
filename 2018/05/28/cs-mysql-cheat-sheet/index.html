@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>MySQL Cheat Sheet | Hamid SOLTANI</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="DataBases,MySQL,Cheat-Sheets,SQL" />
+    
+    <meta name="description" content="source: http://www.mysqltutorial.org/mysql-cheat-sheet.aspx  the most commonly used MySQL commands and statements that help you work with MySQL more effectively.  MySQL CommandsAccess MySQL server fro">
+<meta name="keywords" content="DataBases,MySQL,Cheat-Sheets,SQL">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL Cheat Sheet">
+<meta property="og:url" content="http://localhost:4000/2018/05/28/cs-mysql-cheat-sheet/index.html">
+<meta property="og:site_name" content="Hamid SOLTANI">
+<meta property="og:description" content="source: http://www.mysqltutorial.org/mysql-cheat-sheet.aspx  the most commonly used MySQL commands and statements that help you work with MySQL more effectively.  MySQL CommandsAccess MySQL server fro">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://localhost:4000/css/images/thumbs/mysql.png">
+<meta property="og:updated_time" content="2018-05-29T12:05:32.215Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MySQL Cheat Sheet">
+<meta name="twitter:description" content="source: http://www.mysqltutorial.org/mysql-cheat-sheet.aspx  the most commonly used MySQL commands and statements that help you work with MySQL more effectively.  MySQL CommandsAccess MySQL server fro">
+<meta name="twitter:image" content="http://localhost:4000/css/images/thumbs/mysql.png">
+    
+
+    
+        <link rel="alternate" href="/" title="Hamid SOLTANI" type="application/atom+xml" />
+    
+
+    
+        <link rel="icon" href="/css/images/favicon.png" />
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.2.4/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                        <h2 class="subtitle-wrap">
+                            <p class="subtitle">IT &amp; Network Engineer</p>
+                        </h2>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <!-- <a class="main-nav-list-link" href="/">Home</a> -->
+                                    <a class="main-nav-list-link" href="/">Home</a>
+                                </li>
+                            
+                                <li class="main-nav-list-item" >
+                                    <!-- <a class="main-nav-list-link" href="/About/index.html">About</a> -->
+                                    <a class="main-nav-list-link" href="/About/index.html">About</a>
+                                </li>
+                            
+                                        <ul class="main-nav-list"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Cheat-Sheets/">Cheat-Sheets</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Cheat-Sheets/DataBases/">DataBases</a></li></ul></li><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Tutorials/">Tutorials</a><ul class="main-nav-list-child"><li class="main-nav-list-item"><a class="main-nav-list-link" href="/categories/Tutorials/DataBases/">DataBases</a></li></ul></li></ul>
+                                    
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    <a class="page-title-link" href="/categories/Cheat-Sheets/">Cheat-Sheets</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Cheat-Sheets/DataBases/">DataBases</a>
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-cs-mysql-cheat-sheet" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        MySQL Cheat Sheet
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2018/05/28/cs-mysql-cheat-sheet/" class="article-date">
+            <time datetime="2018-05-28T13:39:44.000Z" itemprop="datePublished">2018-05-28</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Cheat-Sheets/">Cheat-Sheets</a>, <a class="tag-link" href="/tags/DataBases/">DataBases</a>, <a class="tag-link" href="/tags/MySQL/">MySQL</a>, <a class="tag-link" href="/tags/SQL/">SQL</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <p>source: <a href="http://www.mysqltutorial.org/mysql-cheat-sheet.aspx" target="_blank" rel="noopener">http://www.mysqltutorial.org/mysql-cheat-sheet.aspx</a></p>
+<ul>
+<li>the most commonly used MySQL commands and statements that help you work with MySQL more effectively.</li>
+</ul>
+<h2 id="MySQL-Commands"><a href="#MySQL-Commands" class="headerlink" title="MySQL Commands"></a>MySQL Commands</h2><p><strong>Access MySQL server from the mysql client using a username and password (MySQL will prompt for a password)</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u [username] -p;</span><br></pre></td></tr></table></figure></p>
+<p><strong>Access a specific db using a username and password:</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u [username] -p [db];</span><br></pre></td></tr></table></figure></p>
+<p><strong>Exit</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">exit</span>;</span><br></pre></td></tr></table></figure></p>
+<p><strong><a href="http://mysqltutorial.org//how-to-backup-db-using-mysqldump.aspx" target="_blank" rel="noopener">Export data using mysqldump tool</a></strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqldump -u [username] -p [db] &gt; data_backup.sql;</span><br></pre></td></tr></table></figure></p>
+<p><strong>To clear MySQL screen console window on Linux, you use the following command:</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; system clear;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>Currently, there is no command available on Windows for clearing MySQL screen console window.</p>
+</blockquote>
+<h2 id="Working-with-Database"><a href="#Working-with-Database" class="headerlink" title="Working with Database"></a>Working with Database</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">DATABASE</span> [<span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span>] db_name; <span class="comment">-- Create a db if it does not exist</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">USE</span> db_name; <span class="comment">-- Use db or change current db to another db you are working with</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">DATABASE</span> [<span class="keyword">IF</span> <span class="keyword">EXISTS</span>] db_name; <span class="comment">-- Drop a db permanently.</span></span><br><span class="line"><span class="comment">--  /!\ All physical file associated with the db is no longer exists.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">show</span> <span class="keyword">databases</span>; <span class="comment">-- Show all available dbs</span></span><br></pre></td></tr></table></figure>
+<h2 id="Working-with-Table"><a href="#Working-with-Table" class="headerlink" title="Working with Table"></a>Working with Table</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- Lists all tables in a current db.</span></span><br><span class="line"><span class="keyword">show</span> <span class="keyword">tables</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- Create a new table or a temporary table</span></span><br><span class="line"><span class="keyword">CREATE</span> [<span class="keyword">TEMPORARY</span>] <span class="keyword">TABLE</span> [<span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span>] <span class="keyword">table</span>(</span><br><span class="line">   <span class="keyword">key</span> <span class="keyword">type</span>(<span class="keyword">size</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> PRIMARY <span class="keyword">KEY</span> AUTO_INCREMENT,</span><br><span class="line">   c1 <span class="keyword">type</span>(<span class="keyword">size</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">   c2 <span class="keyword">type</span>(<span class="keyword">size</span>) <span class="literal">NULL</span>,</span><br><span class="line">   ...</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> [<span class="keyword">TEMPORARY</span>] <span class="keyword">TABLE</span> [<span class="keyword">IF</span> <span class="keyword">NOT</span> <span class="keyword">EXISTS</span>] <span class="keyword">table</span>(</span><br><span class="line">   <span class="keyword">key</span> <span class="keyword">type</span>(<span class="keyword">size</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> PRIMARY <span class="keyword">KEY</span> AUTO_INCREMENT,</span><br><span class="line">   c1 <span class="keyword">type</span>(<span class="keyword">size</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">   c2 <span class="keyword">type</span>(<span class="keyword">size</span>) <span class="literal">NULL</span>,</span><br><span class="line">   ...</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p><strong>Altering table structure (There are many actions that you can use)</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- Add a new column</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> <span class="keyword">table</span> <span class="keyword">ADD</span> [<span class="keyword">COLUMN</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">-- Drop an existing column</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> <span class="keyword">table</span> <span class="keyword">DROP</span> [<span class="keyword">COLUMN</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">-- Add an index to a table on a column.</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> <span class="keyword">table</span> <span class="keyword">ADD</span> <span class="keyword">INDEX</span> [<span class="keyword">name</span>](<span class="keyword">column</span>, ...);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- Add primary key</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> <span class="keyword">table</span> <span class="keyword">ADD</span> PRIMARY <span class="keyword">KEY</span> (<span class="keyword">column</span>,...)</span><br><span class="line"></span><br><span class="line"><span class="comment">-- Remove primary key</span></span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> <span class="keyword">table</span> <span class="keyword">DROP</span> PRIMARY <span class="keyword">KEY</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- Deleting table structure and data permanently.</span></span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> [<span class="keyword">IF</span> <span class="keyword">EXISTS</span>] <span class="keyword">table</span> [, name2, ...]</span><br><span class="line">[RESTRICT | <span class="keyword">CASCADE</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">-- Get information about a table or a column.</span></span><br><span class="line"><span class="keyword">DESCRIBE</span> <span class="keyword">table</span> [<span class="keyword">column</span>]</span><br></pre></td></tr></table></figure></p>
+<h2 id="Working-with-Index"><a href="#Working-with-Index" class="headerlink" title="Working with Index"></a>Working with Index</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- Creating an index on a table</span></span><br><span class="line"><span class="keyword">CREATE</span> [<span class="keyword">UNIQUE</span>|FULLTEXT] <span class="keyword">INDEX</span> index_name</span><br><span class="line"><span class="keyword">ON</span> <span class="keyword">table</span> (<span class="keyword">column</span>,...)</span><br><span class="line"></span><br><span class="line"><span class="comment">-- Removing a specified index from table</span></span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">INDEX</span> index_name</span><br></pre></td></tr></table></figure>
+<h2 id="Querying-Data"><a href="#Querying-Data" class="headerlink" title="Querying Data"></a>Querying Data</h2><p><strong>Simple Queries</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">table</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">column</span>, column2….</span><br><span class="line"><span class="keyword">FROM</span> <span class="keyword">table</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> (<span class="keyword">column</span>)</span><br><span class="line"><span class="keyword">FROM</span> <span class="keyword">table</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> <span class="keyword">table</span></span><br><span class="line"><span class="keyword">WHERE</span> condition;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- using alias</span></span><br><span class="line"><span class="keyword">SELECT</span> column_1 <span class="keyword">AS</span> new_column_1, ...</span><br><span class="line"><span class="keyword">FROM</span> <span class="keyword">table</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>from multiple tables</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- using inner join or left join</span></span><br><span class="line"><span class="keyword">SELECT</span> * </span><br><span class="line"><span class="keyword">FROM</span> table_1</span><br><span class="line"><span class="keyword">INNER</span> <span class="keyword">JOIN</span> table_2 <span class="keyword">ON</span> conditions</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> * </span><br><span class="line"><span class="keyword">FROM</span> table1</span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> table2 <span class="keyword">ON</span> conditions</span><br></pre></td></tr></table></figure></p>
+<p><strong>Counting rows</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">COUNT</span> (*)</span><br><span class="line"><span class="keyword">FROM</span> <span class="keyword">table</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>Sorting</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">column</span>, column2, ...</span><br><span class="line"><span class="keyword">FROM</span> <span class="keyword">table</span></span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">column</span> <span class="keyword">ASC</span> [<span class="keyword">DESC</span>], column2 <span class="keyword">ASC</span> [<span class="keyword">DESC</span>],...;</span><br></pre></td></tr></table></figure></p>
+<p><strong>GROUP BY clause</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> <span class="keyword">table</span></span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> column_1, column_2, ...;</span><br></pre></td></tr></table></figure></p>
+<p><strong>Filter group of rows using both GROUP BY and HAVING clauses.</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> *</span><br><span class="line"><span class="keyword">FROM</span> <span class="keyword">table</span></span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> column_1</span><br><span class="line"><span class="keyword">HAVING</span> condition;</span><br></pre></td></tr></table></figure></p>
+<h2 id="Modifying-Data"><a href="#Modifying-Data" class="headerlink" title="Modifying Data"></a>Modifying Data</h2><p><strong>insert</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">table</span>(column1,column2,...)</span><br><span class="line"><span class="keyword">VALUES</span>(value_1,value_2,...);</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">table</span>(column1,column2,...)</span><br><span class="line"><span class="keyword">VALUES</span>(value_1,value_2,...),</span><br><span class="line">      (value_1,value_2,...),</span><br><span class="line">      (value_1,value_2,...)...</span><br></pre></td></tr></table></figure></p>
+<p><strong>update</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> <span class="keyword">table</span></span><br><span class="line"><span class="keyword">SET</span> column_1 = value_1,</span><br><span class="line">    ...</span><br><span class="line"></span><br><span class="line"><span class="keyword">UPDATE</span> <span class="keyword">table</span></span><br><span class="line"><span class="keyword">SET</span> column_1 = value_1,</span><br><span class="line">    ...</span><br><span class="line"><span class="keyword">WHERE</span> condition</span><br></pre></td></tr></table></figure></p>
+<p><strong>Update with join</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> table_1, table_2</span><br><span class="line"><span class="keyword">INNER</span> <span class="keyword">JOIN</span> table_1 <span class="keyword">ON</span> table_1.column_1 = table_2.column_1</span><br><span class="line"><span class="keyword">SET</span> column_1 = value_1,</span><br><span class="line"><span class="keyword">WHERE</span> condition</span><br></pre></td></tr></table></figure></p>
+<p><strong>Delete</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- Delete all rows</span></span><br><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> <span class="keyword">table</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> <span class="keyword">table</span></span><br><span class="line"><span class="keyword">WHERE</span> condition;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- Delete with join</span></span><br><span class="line"><span class="keyword">DELETE</span> table_1, table2</span><br><span class="line"><span class="keyword">FROM</span> table_1</span><br><span class="line"><span class="keyword">INNER</span> <span class="keyword">JOIN</span> table_2 <span class="keyword">ON</span> table_1.column_1 = table_2.column_2</span><br><span class="line"><span class="keyword">WHERE</span> condition;</span><br></pre></td></tr></table></figure>
+<h2 id="Search"><a href="#Search" class="headerlink" title="Search"></a>Search</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- using LIKE operator</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">table</span></span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">column</span> <span class="keyword">LIKE</span> <span class="string">'%value%'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- using a RegEx with RLIKE operator</span></span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">table</span></span><br><span class="line"><span class="keyword">WHERE</span> <span class="keyword">column</span> <span class="keyword">RLIKE</span> <span class="string">'regular_expression'</span></span><br></pre></td></tr></table></figure>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://localhost:4000/2018/05/28/cs-mysql-cheat-sheet/" data-id="cjhrsmb6900023ga78786kjkl" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>follow:</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="linkedin" href="https://www.linkedin.com/in/hamid-soltani-dz" target="_blank" rel="noopener">
+                        <i class="icon fa fa-linkedin"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2018/05/28/db-how-to-backup-databases-using-mysqldump-tool/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            How To Backup Databases Using mysqldump Tool
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2018/05/28/db-20-mysql-mysqladmin-commands-for-database-administration-in-linux/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">20 MySQL (Mysqladmin) Commands for Database Administration in Linux</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">recents</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/05/29/test/" class="title">test</a></p>
+                            <p class="item-date"><time datetime="2018-05-29T14:42:53.000Z" itemprop="datePublished">2018-05-29</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Tutorials/">Tutorials</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tutorials/DataBases/">DataBases</a></p>
+                            <p class="item-title"><a href="/2018/05/28/db-4-Useful-Command-line-Tools-to-Monitor-MySQL-Performance-in-Linux/" class="title">4 Useful Command line Tools to Monitor MySQL Performance in Linux</a></p>
+                            <p class="item-date"><time datetime="2018-05-28T14:31:09.000Z" itemprop="datePublished">2018-05-28</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Tutorials/">Tutorials</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tutorials/DataBases/">DataBases</a></p>
+                            <p class="item-title"><a href="/2018/05/28/db-how-to-backup-databases-using-mysqldump-tool/" class="title">How To Backup Databases Using mysqldump Tool</a></p>
+                            <p class="item-date"><time datetime="2018-05-28T13:55:45.000Z" itemprop="datePublished">2018-05-28</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Cheat-Sheets/">Cheat-Sheets</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Cheat-Sheets/DataBases/">DataBases</a></p>
+                            <p class="item-title"><a href="/2018/05/28/cs-mysql-cheat-sheet/" class="title">MySQL Cheat Sheet</a></p>
+                            <p class="item-date"><time datetime="2018-05-28T13:39:44.000Z" itemprop="datePublished">2018-05-28</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"><a class="article-category-link" href="/categories/Tutorials/">Tutorials</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tutorials/DataBases/">DataBases</a></p>
+                            <p class="item-title"><a href="/2018/05/28/db-20-mysql-mysqladmin-commands-for-database-administration-in-linux/" class="title">20 MySQL (Mysqladmin) Commands for Database Administration in Linux</a></p>
+                            <p class="item-date"><time datetime="2018-05-28T13:17:44.000Z" itemprop="datePublished">2018-05-28</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">categories</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Cheat-Sheets/">Cheat-Sheets</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Cheat-Sheets/DataBases/">DataBases</a><span class="category-list-count">1</span></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tutorials/">Tutorials</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Tutorials/DataBases/">DataBases</a><span class="category-list-count">3</span></li></ul></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Backup/" style="font-size: 10px;">Backup</a> <a href="/tags/CentOS/" style="font-size: 10px;">CentOS</a> <a href="/tags/Cheat-Sheets/" style="font-size: 10px;">Cheat-Sheets</a> <a href="/tags/DataBases/" style="font-size: 20px;">DataBases</a> <a href="/tags/Fedora/" style="font-size: 10px;">Fedora</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Monitoring/" style="font-size: 10px;">Monitoring</a> <a href="/tags/MySQL/" style="font-size: 20px;">MySQL</a> <a href="/tags/RHEL/" style="font-size: 10px;">RHEL</a> <a href="/tags/SQL/" style="font-size: 15px;">SQL</a> <a href="/tags/cli-Tools/" style="font-size: 10px;">cli Tools</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="https://opensource.com">opensource.com</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://www.linux.com/tutorials">linux.com</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://www.tecmint.com">tecmint.com</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://www.thegeekstuff.com">thegeekstuff.com</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2018 Hamid SOLTANI</p>
+                <!-- <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p> -->
+                <p>IT & Netwok Engineer</p>
+            </div>
+        </div>
+    </div>
+</footer>
+        
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>

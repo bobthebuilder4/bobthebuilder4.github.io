@@ -6,20 +6,26 @@
     
 
     
-    <title>Hamid SOLTANI</title>
+    <title>How To Backup Databases Using mysqldump Tool | Hamid SOLTANI</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, omnis.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hamid SOLTANI">
-<meta property="og:url" content="http://localhost:4000/index.html">
+        <meta name="keywords" content="DataBases,MySQL,SQL,Backup" />
+    
+    <meta name="description" content="source: http://www.mysqltutorial.org/how-to-backup-database-using-mysqldump.aspx  MySQL GUI tools, often provide features for backup MySQL dbs with ease  phpMyAdmin SQLyog   Problem:the backup proces">
+<meta name="keywords" content="DataBases,MySQL,SQL,Backup">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How To Backup Databases Using mysqldump Tool">
+<meta property="og:url" content="http://localhost:4000/2018/05/28/db-how-to-backup-databases-using-mysqldump-tool/index.html">
 <meta property="og:site_name" content="Hamid SOLTANI">
-<meta property="og:description" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, omnis.">
+<meta property="og:description" content="source: http://www.mysqltutorial.org/how-to-backup-database-using-mysqldump.aspx  MySQL GUI tools, often provide features for backup MySQL dbs with ease  phpMyAdmin SQLyog   Problem:the backup proces">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="http://localhost:4000/img/mysql-backup.jpg">
+<meta property="og:updated_time" content="2018-05-29T12:13:43.316Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hamid SOLTANI">
-<meta name="twitter:description" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, omnis.">
+<meta name="twitter:title" content="How To Backup Databases Using mysqldump Tool">
+<meta name="twitter:description" content="source: http://www.mysqltutorial.org/how-to-backup-database-using-mysqldump.aspx  MySQL GUI tools, often provide features for backup MySQL dbs with ease  phpMyAdmin SQLyog   Problem:the backup proces">
+<meta name="twitter:image" content="http://localhost:4000/img/mysql-backup.jpg">
     
 
     
@@ -136,297 +142,150 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    <em class="page-title-link" data-url="home">Home</em>
+    <a class="page-title-link" href="/categories/Tutorials/">Tutorials</a><i class="icon fa fa-angle-right"></i><a class="page-title-link" href="/categories/Tutorials/DataBases/">DataBases</a>
     </h1>
 </div>
                         <div class="main-body-content">
-                            
+                            <article id="post-db-how-to-backup-databases-using-mysqldump-tool" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        How To Backup Databases Using mysqldump Tool
+        </h1>
+    
 
-    
-    
+            </header>
         
         
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2018" class="archive-year"><i class="icon fa fa-calendar-o"></i>2018</a>
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2018/05/28/db-how-to-backup-databases-using-mysqldump-tool/" class="article-date">
+            <time datetime="2018-05-28T13:55:45.000Z" itemprop="datePublished">2018-05-28</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Backup/">Backup</a>, <a class="tag-link" href="/tags/DataBases/">DataBases</a>, <a class="tag-link" href="/tags/MySQL/">MySQL</a>, <a class="tag-link" href="/tags/SQL/">SQL</a>
+    </div>
+
             </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
         
-        <a href="/2018/05/29/test/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/img/t.jpeg)" alt="test" class="thumbnail-image"></span>
-    
-    
         
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-</span>
+        <div class="article-entry" itemprop="articleBody">
+            <!-- thumbnail: /css/images/thumbs/mysql.png -->
+<p>source: <a href="http://www.mysqltutorial.org/how-to-backup-database-using-mysqldump.aspx" target="_blank" rel="noopener">http://www.mysqltutorial.org/how-to-backup-database-using-mysqldump.aspx</a></p>
+<p><img src="/img/mysql-backup.jpg" alt="test"></p>
+<p>MySQL GUI tools, often provide features for backup MySQL dbs with ease</p>
+<ul>
+<li>phpMyAdmin</li>
+<li>SQLyog</li>
+</ul>
+<blockquote>
+<p><strong>Problem:</strong><br><strong>the backup process could be very slow</strong> if your db is big<br><strong>because</strong>: the backup file needs to be transferred across the network to your client PC</p>
+</blockquote>
+<h3 id="Features-of-mysqldump"><a href="#Features-of-mysqldump" class="headerlink" title="Features of mysqldump:"></a><strong>Features of mysqldump:</strong></h3><ul>
+<li>best solution <strong>if your db is big</strong></li>
+<li>a very useful tool for backing up or dumping MySQL dbs locally on the server <strong>very fast</strong></li>
+<li>located in the root/bin folder of MySQL installation folder.</li>
+<li>can be used to <strong>dump dbs for backup</strong> or <strong>transfer db to another db server</strong></li>
+<li>The <strong>dump file</strong> contains a set of <strong>SQL statements</strong> to create db objects.</li>
+<li>can be used to <strong>generate CSV</strong>, delimited or <strong>XML</strong> files</li>
+</ul>
+<h2 id="How-to-backup-a-MySQL-db-Export"><a href="#How-to-backup-a-MySQL-db-Export" class="headerlink" title="How to backup a MySQL db (Export)"></a>How to backup a MySQL db (Export)</h2><ul>
+<li>the bd first has to exist</li>
+</ul>
+<h3 id="structure-data"><a href="#structure-data" class="headerlink" title="structure + data"></a>structure + data</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqldump -u username –ppassword db_name &gt; c:\temp\backup001.sql</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>all db structure and data will be exported into a single [backup001.sql] dump file</p>
+</blockquote>
+<h3 id="structure-only-d-–no-data-option"><a href="#structure-only-d-–no-data-option" class="headerlink" title="structure only (-d, –no-data option)"></a>structure only (-d, –no-data option)</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mysqldump -u username –ppassword  -no-data db_name &gt; c:\temp\backup002.sql</span><br><span class="line"><span class="comment"># backup002.sql is a dump file</span></span><br><span class="line"></span><br><span class="line">mysqldump -d -u username -ppassword --all-databases &gt; filename.sql</span><br><span class="line"><span class="comment"># (-d option) + for all dbs</span></span><br></pre></td></tr></table></figure>
+<h3 id="data-Only-–no-create-info-option"><a href="#data-Only-–no-create-info-option" class="headerlink" title="data Only (–no-create-info option)"></a>data Only (–no-create-info option)</h3><p>There is a case that you want to refresh data in staging and development system so the data in those systems are the same as the production system.</p>
+<p>In this case, you just need to export data only from the production system and import it to staging and development system</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqldump –u username –ppassword –no-create-info db_name &gt; c:\temp\backup002.sql</span><br></pre></td></tr></table></figure>
+<h3 id="backup-multiple-MySQL-databases-into-a-single-file"><a href="#backup-multiple-MySQL-databases-into-a-single-file" class="headerlink" title="backup multiple MySQL databases into a single file"></a>backup multiple MySQL databases into a single file</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># separate databases by ','</span></span><br><span class="line">mysqldump -u username –ppassword  dbname1,dbname2 &gt; dump_file.sql</span><br><span class="line"></span><br><span class="line"><span class="comment"># –all-database (option): If you want to backup all databases</span></span><br><span class="line">mysqldump -u username –ppassword –all-database &gt; dump_file.sql</span><br></pre></td></tr></table></figure>
+<h2 id="Extra"><a href="#Extra" class="headerlink" title="Extra"></a>Extra</h2><h3 id="With-Compression"><a href="#With-Compression" class="headerlink" title="With Compression"></a>With Compression</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqldump -u username -ppassword --all-databases | gzip -9 &gt; [filename.sql.gz]</span><br></pre></td></tr></table></figure>
+<h3 id="IF-NOT-EXIST-or-DROP-DATABASE"><a href="#IF-NOT-EXIST-or-DROP-DATABASE" class="headerlink" title="IF NOT EXIST or DROP DATABASE"></a>IF NOT EXIST or DROP DATABASE</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Without CREATE DATABASE….IF NOT EXIST or DROP DATABASE …</span></span><br><span class="line">mysqldump -u username -ppassword db_name &gt; filename.sql</span><br><span class="line"></span><br><span class="line"><span class="comment"># with CREATE … IF NOT EXIST</span></span><br><span class="line">mysqldump -u username -ppassword --databases db_name &gt; filename.sql</span><br><span class="line"></span><br><span class="line"><span class="comment"># with CREATE … IF NOT EXIST and DROP DATABASE</span></span><br><span class="line">mysqldump -u username -ppassword --databases --add-drop-database db_name &gt; filename.sql</span><br></pre></td></tr></table></figure>
+<h2 id="Importing"><a href="#Importing" class="headerlink" title="Importing"></a>Importing</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Extract Gzipped MySQL Export File</span></span><br><span class="line">gunzip [filename.sql.gz]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Import Multiple MySQL Databases from SQL File</span></span><br><span class="line">mysql -u username -ppassword &lt; filename.sql</span><br><span class="line"></span><br><span class="line"><span class="comment"># Import Single MySQL Databases from SQL File</span></span><br><span class="line">mysql -u username -p -D [db_name] -o &lt; filename.sql <span class="comment"># Note: Create the database first</span></span><br></pre></td></tr></table></figure>
 
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
+        </div>
+        <footer class="article-footer">
             
-            </div>
-            <div class="date"><time datetime="2018-05-29T14:42:53.000Z" itemprop="datePublished">2018-05-29</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2018/05/29/test/">test</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
- ADD Accomplishements
- Books that I’ve read
- Training Videos That I’ve followed
- Add http://vizualize.me/
- AWS
- Thumbnails
- Quotes
 
 
 
+    <a data-url="http://localhost:4000/2018/05/28/db-how-to-backup-databases-using-mysqldump-tool/" data-id="cjhrsmb6g00063ga79359duxy" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
 
-command
-description
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
 
+            if ($('#' + id).length) {
+                box = $('#' + id);
 
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
 
+              box = $(html);
 
-adipisicing
-itaque
+              $('body').append(box);
+            }
 
+            $('.article-share-box.on').hide();
 
-amet
-Lorem
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
 
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
 
-aspern
-        </p>
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
     </div>
 </article>
-    
 
+    <section id="comments">
     
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2018/05/28/db-4-Useful-Command-line-Tools-to-Monitor-MySQL-Performance-in-Linux/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/img/mytop.jpeg)" alt="4 Useful Command line Tools to Monitor MySQL Performance in Linux" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Tutorials/">Tutorials</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tutorials/DataBases/">DataBases</a>
-            </div>
-            <div class="date"><time datetime="2018-05-28T14:31:09.000Z" itemprop="datePublished">2018-05-28</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2018/05/28/db-4-Useful-Command-line-Tools-to-Monitor-MySQL-Performance-in-Linux/">4 Useful Command line Tools to Monitor MySQL Performance in Linux</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            source: https://www.tecmint.com/mysql-performance-monitoring/
-4 command line tools to monitor MySQL database uptime, load and performance in Linux.
-Uptime: means how long the database has been running
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2018/05/28/db-how-to-backup-databases-using-mysqldump-tool/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/img/mysql-backup.jpg)" alt="How To Backup Databases Using mysqldump Tool" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Tutorials/">Tutorials</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tutorials/DataBases/">DataBases</a>
-            </div>
-            <div class="date"><time datetime="2018-05-28T13:55:45.000Z" itemprop="datePublished">2018-05-28</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2018/05/28/db-how-to-backup-databases-using-mysqldump-tool/">How To Backup Databases Using mysqldump Tool</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            
-source: http://www.mysqltutorial.org/how-to-backup-database-using-mysqldump.aspx
-
-MySQL GUI tools, often provide features for backup MySQL dbs with ease
-
-phpMyAdmin
-SQLyog
-
-
-Problem:the backup proces
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2018/05/28/cs-mysql-cheat-sheet/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/css/images/thumbs/mysql.png)" alt="MySQL Cheat Sheet" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Cheat-Sheets/">Cheat-Sheets</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Cheat-Sheets/DataBases/">DataBases</a>
-            </div>
-            <div class="date"><time datetime="2018-05-28T13:39:44.000Z" itemprop="datePublished">2018-05-28</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2018/05/28/cs-mysql-cheat-sheet/">MySQL Cheat Sheet</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            source: http://www.mysqltutorial.org/mysql-cheat-sheet.aspx
-
-the most commonly used MySQL commands and statements that help you work with MySQL more effectively.
-
-MySQL CommandsAccess MySQL server fro
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2018/05/28/db-20-mysql-mysqladmin-commands-for-database-administration-in-linux/" class="thumbnail">
-    
-    
-        <span style="background-image:url(/css/images/thumbs/mysql.png)" alt="20 MySQL (Mysqladmin) Commands for Database Administration in Linux" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            <a class="article-category-link" href="/categories/Tutorials/">Tutorials</a><i class="icon fa fa-angle-right"></i><a class="article-category-link" href="/categories/Tutorials/DataBases/">DataBases</a>
-            </div>
-            <div class="date"><time datetime="2018-05-28T13:17:44.000Z" itemprop="datePublished">2018-05-28</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2018/05/28/db-20-mysql-mysqladmin-commands-for-database-administration-in-linux/">20 MySQL (Mysqladmin) Commands for Database Administration in Linux</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            source: https://www.tecmint.com/mysqladmin-commands-for-database-administration-in-linux/
-some very useful “mysqladmin” commands that are used by system/database administrators in their day-to-day wor
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-
-    </div></section>
-
+    </section>
 
 
                         </div>
@@ -463,6 +322,29 @@ some very useful “mysqladmin” commands that are used by system/database admi
             
         </ul>
     </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2018/05/28/db-4-Useful-Command-line-Tools-to-Monitor-MySQL-Performance-in-Linux/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">newer</strong>
+        <p class="article-nav-title">
+        
+            4 Useful Command line Tools to Monitor MySQL Performance in Linux
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2018/05/28/cs-mysql-cheat-sheet/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">MySQL Cheat Sheet</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
